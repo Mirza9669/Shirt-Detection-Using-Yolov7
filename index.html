@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload and Annotate Image</title>
+</head>
+<body>
+    <h2>Upload an Image</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    
+    <div>
+    
+    {% if display_image %}
+    <h2>Annotated Image</h2>
+    <img src="{{ display_image }}" alt="Annotated Image" width="600" height="600">
+    {% endif %}
+    
+    <div class="row">
+        <h3 class="mt-5">Live Streaming</h3>
+        <img src="{{ url_for('video_feed') }}" width="100%">
+    </div>
+    
+</body>
+</html>
